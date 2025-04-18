@@ -1,8 +1,8 @@
 package scraper
 
 import (
-	// "fmt"
-	"io/ioutil"
+	"fmt"
+	"io"
 	"net/http"
 )
 
@@ -15,8 +15,12 @@ func FetchContent(url string) (string, error) {
 	}
 	defer resp.Body.Close()
 
+	if resp.StatusCode != http.StatusOK {
+		return "", fmt.Errorf("status code: %d", resp.StatusCode)
+	}
+
 	// Baca konten dari response body
-	body, err := ioutil.ReadAll(resp.Body)
+	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return "", err
 	}

@@ -7,16 +7,16 @@ import (
 
 func main() {
 	urls := []string{
-		"https://example.com",
-		"https://golang.org",
-		"https://news.ycombinator.com",
+		"https://simarasok.umkm-pnp.com/",
+		"https://kanaria.codes/",
+		"https://www.tempo.co/",
 	}
 
-	// Panggil fungsi untuk scrape banyak URL
+	// Panggil fungsi untuk scrape setaip URL
 	results := service.ScrapeMultiple(urls)
 
 	// Tampilkan hasilnya
-	for _, result := range results {
-		fmt.Println(result)
-	}
+	for i, result := range results {
+		fmt.Printf("URL %d: %s\n", i+1, result)
+	}	
 }
