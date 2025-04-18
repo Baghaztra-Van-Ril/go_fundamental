@@ -65,3 +65,5 @@ go mod tidy
 go run main.go
 ```
 
+## **Penjelasan Singkat**
+Aplikasi akan mengambil judul dari 3 url yang ada pada main.go (bisa ditambahkan lebih banyak url) secara paralel dengan goroutine dan channel.
